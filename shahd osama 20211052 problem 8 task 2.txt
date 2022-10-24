@@ -1,0 +1,45 @@
+#include "d_arr.h"
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+
+//if you want to use the vector you should uncomment this code
+   //vector<string> v(3);
+    //for(int i=0;i<3;i++){
+      //  cin>>v[i];
+    //}
+    //d_arr<string> arr ;
+     //arr=v;
+   //arr.print();
+
+    int l;
+     cout<<"Enter the length of the array : ";
+    cin>>l;
+     // for : data type int
+    d_arr<int> a(l); //constructor takes the length of the array
+    for(int i=0;i<l;i++){
+        cin>>a[i];
+    }
+    
+    d_arr<int> p(a); // copy constructor
+
+    cout<<"The size of this array is : "<< p.sizee(); // sizee() returns the length of the array
+    cout<<endl;
+    p.print(); // print() prints the array
+
+    cout<<endl<<"the second element in the array is: "<<p[1]; //accessing the array using the [] operator
+    cout<<endl;
+    d_arr<int> m;
+    m=p; // copy assignment
+    m.print();
+
+    cout<<endl;
+    d_arr<int> b;
+    b={1,2,3}; // you can use this to initialize the array
+    b[0]=5;
+    cout<<"The initialized array b is : ";
+    b.print();
+    cout<<endl;
+
+}
